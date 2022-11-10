@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="flex justify-center items-center flex-col">
+      <h4>Add Grade</h4>
+      <form [formGroup]="myForm">
+        <mat-form-field>
+          <input matInput placeholder="Grade" formControlName="grade" />
+        </mat-form-field>
+      </form>
+      <button
+        type="submit"
+        mat-raised-button
+        (click)="onSubmit()"
+        class="bg-green-400"
+        [disabled]="!myForm.valid"
+      >
+        Save Grade
+      </button>
+    </div>
+  </body>
+</html>

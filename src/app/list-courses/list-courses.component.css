@@ -1,0 +1,46 @@
+mat-column {
+  width: 50%;
+}
+* {
+  background: none;
+}
+
+.mat-table {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  text-align: left !important;
+  width: 80% !important;
+  column-width: 100% !important;
+  column-gap: 40px !important;
+  border-collapse: separate !important;
+  border-spacing: 0 4px !important;
+}
+
+mat-column {
+  font-size: 14px;
+}
+
+.mat-column-Name,
+.mat-column-Age {
+  font-size: 14px;
+  column-width: 500px;
+  column-gap: 15px;
+}
+
+.tableDisplay {
+  margin-top: 10%;
+}
+
+.course-button {
+  font-size: 16px !important;
+  display: list-item;
+}
+.wrapper {
+  margin-top: 15%;
+}
+
+@media (max-width: 600px) {
+  .body > div.tableDisplay {
+    margin-top: 20% !important;
+  }
+}

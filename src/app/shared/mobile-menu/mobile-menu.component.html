@@ -1,0 +1,55 @@
+<button
+  type="button"
+  class="absolute top-3 inline-flex items-center justify-center rounded-md text-gray-800 hover:bg-gray-700 hover:text-white hover:outline-none hover:ring-2 hover:ring-inset hover:ring-black"
+  aria-controls="mobile-menu"
+  aria-expanded="false"
+  (click)="toggleMenu()"
+>
+  <span class="sr-only">Open main menu</span>
+
+  <svg
+    class="block h-6 w-6"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+    aria-hidden="true"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+    />
+  </svg>
+
+  <svg
+    class="hidden h-6 w-6"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+    aria-hidden="true"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M6 18L18 6M6 6l12 12"
+    />
+  </svg>
+</button>
+
+<div
+  [@openClose]="isOpen ? 'open' : 'closed'"
+  class="open-close-container mt-20 mr-20"
+>
+  <ng-container *ngFor="let element of navigation">
+    <a
+      class="cursor-pointer text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+      *ngIf="element.auth"
+      (click)="element.link()"
+      >{{ element.text }}</a
+    >
+  </ng-container>
+</div>

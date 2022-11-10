@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="tableDisplay">
+      <mat-form-field type="button" class="btn btn-secondary" appearance="fill">
+        <mat-label>Display Order</mat-label>
+        <mat-select>
+          <mat-option
+            *ngFor="let order of orders"
+            [value]="order"
+            (click)="reloadDataOrdered(order)"
+          >
+            {{ order }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field type="button" class="btn btn-secondary" appearance="fill">
+        <mat-label>Order by column</mat-label>
+        <mat-select>
+          <mat-option
+            *ngFor="let orderColumn of orderColumns"
+            [value]="orderColumn.columnValue"
+            (click)="reloadDataOrderedBy(orderColumn.columnId)"
+          >
+            {{ orderColumn.columnValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <form [formGroup]="myFilterForm">
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Enter name to filter"
+            formControlName="filter"
+            (keyup)="reloadDataFilteredBy()"
+          />
+        </mat-form-field>
+      </form>
+
+      <table
+        mat-table
+        [dataSource]="dataSource"
+        class="d-flex justify-content-center"
+      >
+        <ng-container matColumnDef="Name">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Age">
+          <th mat-header-cell *matHeaderCellDef>Age</th>
+          <td mat-cell *matCellDef="let element">{{ element.age }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Enroll">
+          <th mat-header-cell *matHeaderCellDef>Actions</th>
+          <td mat-cell *matCellDef="let element">
+            <button
+              type="menu"
+              mat-button
+              [matMenuTriggerFor]="enrollmentMenu"
+              (click)="loadCourses()"
+            >
+              Enroll
+            </button>
+            <mat-menu #enrollmentMenu="matMenu" xPosition="after">
+              <button
+                class="course-button"
+                mat-button
+                *ngFor="let course of courses; let i = index"
+                (click)="enrollStudent(element.id, i)"
+              >
+                {{ course.name }}
+              </button>
+            </mat-menu>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </div>
+    <div>
+      <mat-paginator
+        #paginator
+        [length]="totalRaws"
+        [pageIndex]="currentPage"
+        [pageSize]="pageSize"
+        [pageSizeOptions]="pageSizeOptions"
+        (page)="pageChanged($event)"
+        aria-label="Select page"
+      >
+      </mat-paginator>
+    </div>
+  </body>
+</html>

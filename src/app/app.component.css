@@ -1,0 +1,74 @@
+.student-submit-form {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  margin-top: 10%;
+  z-index: 100;
+}
+.student-submit-form.save-user-button {
+  text-align: center;
+}
+
+mat-form-field {
+  display: flex;
+  margin: auto;
+  width: 30%;
+  padding: 10px;
+}
+
+.display-students {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+button[type="menu"] {
+  position: absolute;
+  font-size: 24px;
+  top: 0;
+  right: 0;
+  width: auto;
+  margin-top: 20px;
+}
+button[type="submit"] {
+  position: absolute;
+  font-size: 20px;
+  margin-left: 37%;
+}
+.student-submit-form {
+  width: 50%;
+}
+
+.display-student-table {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  margin-top: 50px;
+  z-index: 108;
+}
+
+.user-table {
+  border: 2px solid black;
+
+  border-radius: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 60%;
+  margin-top: 6%;
+}
+.user-table thead,
+.user-table tr,
+.user-table td {
+  text-align: left;
+  border-bottom: 1px solid black;
+  border-spacing: 5px;
+  padding: 5px;
+  font-weight: 500;
+}

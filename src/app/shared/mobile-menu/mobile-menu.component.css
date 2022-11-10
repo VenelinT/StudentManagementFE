@@ -1,0 +1,9 @@
+@media (max-width: 600px) {
+  * {
+    font-size: 10px !important;
+  }
+  .open-close-container {
+    margin-top: 15%;
+    margin-bottom: 5%;
+  }
+}

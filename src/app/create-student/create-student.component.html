@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="flex justify-center items-center flex-col">
+      <h4>Add Student</h4>
+      <form
+        [formGroup]="myForm"
+        class="flex justify-center items-center flex-col"
+      >
+        <mat-form-field>
+          <input matInput placeholder="name" formControlName="name" />
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="age" formControlName="age" />
+        </mat-form-field>
+      </form>
+      <button
+        type="submit"
+        mat-raised-button
+        (click)="postStudent()"
+        [disabled]="!myForm.valid"
+      >
+        Save Student
+      </button>
+      <h4 class="">Age must be between 14-100!</h4>
+    </div>
+  </body>
+</html>
