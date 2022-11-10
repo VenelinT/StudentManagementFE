@@ -22,7 +22,7 @@ import { CreateTeacherComponent } from 'src/app/create-teacher/create-teacher.co
       state(
         'open',
         style({
-          height: '160px',
+          height: '250px',
           opacity: 1,
           transform: 'translateX(10%)',
         })

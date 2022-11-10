@@ -82,6 +82,7 @@ body {
   .third {
     width: 30px;
     height: 30px;
+    display: none;
   }
 }
 .first {

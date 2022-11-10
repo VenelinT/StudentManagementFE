@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="overflow-scroll">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body>
+  <body class="h-content overflow-scroll">
     <div class="space-y-1 md:absolute z-10" id="mobile-menu">
       <div class="px-2">
         <app-mobile-menu></app-mobile-menu>
       </div>
     </div>
-    <main class="flex justify-center items-center">
+    <main class="flex justify-center items-center overflow-scroll">
       <router-outlet #outlet="outlet"></router-outlet>
     </main>
   </body>

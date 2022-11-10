@@ -6,39 +6,13 @@
       <div class="flex flex-1 items-center justify-center sm:items-stretch">
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
-            <a
-              class="cursor-pointer text-gray-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-              (click)="openAddStudentModal()"
-              >Add Student</a
+            <button
+              *ngFor="let element of navigation"
+              (click)="element.link()"
+              class="cursor-pointer text-gray-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg"
             >
-
-            <a
-              class="cursor-pointer text-gray-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-              (click)="openAddCourseModal()"
-              >Add Course</a
-            >
-
-            <a
-              class="cursor-pointer text-gray-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-              (click)="openAddTeacherModal()"
-              >Add Teacher</a
-            >
-
-            <a
-              class="cursor-pointer text-gray-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-              (click)="router.navigate(['/student/show'])"
-              >List Students</a
-            >
-            <a
-              class="cursor-pointer text-gray-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-              (click)="router.navigate(['/course/show'])"
-              >List Students In Courses</a
-            >
-            <a
-              class="cursor-pointer text-gray-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-              (click)="router.navigate(['/courses'])"
-              >List Courses</a
-            >
+              {{ element.text }}
+            </button>
           </div>
         </div>
       </div>

@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body>
+  <body class="p-0">
     <div class="flex justify-center items-center flex-col">
       <h4>Add Student</h4>
       <form
         [formGroup]="myForm"
-        class="flex justify-center items-center flex-col"
+        class="flex justify-center items-center flex-col p-0"
       >
         <mat-form-field>
           <input matInput placeholder="name" formControlName="name" />
@@ -20,15 +20,15 @@
           <input matInput placeholder="age" formControlName="age" />
         </mat-form-field>
       </form>
+      <h4 class="">Age must be between 14-100!</h4>
       <button
         type="submit"
-        class="action-buttons disabled:bg-slate-200 disabled:cursor-not-allowed"
+        class="action-buttons disabled:bg-slate-300 disabled:cursor-not-allowed"
         (click)="postStudent()"
         [disabled]="!myForm.valid"
       >
         Save Student
       </button>
-      <h4 class="">Age must be between 14-100!</h4>
     </div>
   </body>
 </html>

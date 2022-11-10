@@ -16,11 +16,57 @@ export class HorizontalMenuComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  navigation = [
+    {
+      link: () => {
+        this.openAddStudentModal();
+      },
+      auth: true,
+      text: 'Add Student',
+    },
+    {
+      link: () => {
+        this.openAddCourseModal();
+      },
+      auth: true,
+      text: 'Add Course',
+    },
+    {
+      link: () => {
+        this.openAddTeacherModal();
+      },
+      auth: true,
+      text: 'Add Teacher',
+    },
+    {
+      link: () => {
+        this.router.navigate(['student/show']);
+      },
+      auth: true,
+      text: 'List Students',
+    },
+    {
+      link: () => {
+        this.router.navigate(['course/show']);
+      },
+      auth: true,
+      text: 'List Students In Courses',
+    },
+    {
+      link: () => {
+        this.router.navigate(['courses']);
+      },
+      auth: true,
+      text: 'List Courses',
+    },
+  ];
+
   openAddStudentModal() {
     let dialogRef = this.dialog.open(CreateStudentComponent, {
       width: '400px',
       enterAnimationDuration: '200ms',
       autoFocus: true,
+      panelClass: 'custom-dialogbox',
     });
   }
   openAddCourseModal() {

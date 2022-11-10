@@ -44,9 +44,9 @@
   [@openClose]="isOpen ? 'open' : 'closed'"
   class="open-close-container mt-20 mr-20"
 >
-  <ng-container *ngFor="let element of navigation">
+  <ng-container *ngFor="let element of navigation" class="lg:w-content h-24">
     <button
-      class="cursor-pointer text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium disabled:cursor-default"
+      class="cursor-pointer text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium disabled:cursor-default lg:text-3xl"
       *ngIf="element.auth"
       (click)="element.link()"
       [disabled]="!isOpen"
