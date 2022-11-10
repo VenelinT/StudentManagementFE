@@ -15,7 +15,6 @@ export class ListCoursesComponent implements OnInit {
 
   constructor(
     private courseService: CreateCourseService,
-    private gradeService: GradeService,
     private dialog: MatDialog
   ) {}
   courses: CourseResponse[] = [];
@@ -40,12 +39,5 @@ export class ListCoursesComponent implements OnInit {
         courseId: this.courseId,
       },
     });
-  }
-  getGradesOfStudent(studentId: number) {
-    this.gradeService
-      .getGradesofStudent(this.courseId, studentId)
-      .subscribe((data) => {
-        console.log(data);
-      });
   }
 }

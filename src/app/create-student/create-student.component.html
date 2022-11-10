@@ -22,7 +22,7 @@
       </form>
       <button
         type="submit"
-        mat-raised-button
+        class="action-buttons disabled:bg-slate-200 disabled:cursor-not-allowed"
         (click)="postStudent()"
         [disabled]="!myForm.valid"
       >

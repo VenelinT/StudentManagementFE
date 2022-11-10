@@ -11,8 +11,9 @@ export function displayAlert(
     text: message,
     timer: duration,
     icon: iconType,
-    position: 'bottom-right',
+    position: 'bottom',
     heightAuto: false,
+    toast: true,
     showConfirmButton: false,
   });
 }

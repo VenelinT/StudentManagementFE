@@ -45,11 +45,13 @@
   class="open-close-container mt-20 mr-20"
 >
   <ng-container *ngFor="let element of navigation">
-    <a
-      class="cursor-pointer text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+    <button
+      class="cursor-pointer text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium disabled:cursor-default"
       *ngIf="element.auth"
       (click)="element.link()"
-      >{{ element.text }}</a
+      [disabled]="!isOpen"
     >
+      {{ element.text }}
+    </button>
   </ng-container>
 </div>

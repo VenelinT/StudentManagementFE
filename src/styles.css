@@ -24,3 +24,17 @@ body > #bg {
   top: 0;
   left: 0;
 }
+.action-buttons {
+  color: black;
+  background-color: transparent;
+  border: 1px solid black;
+  margin-right: 0.5rem;
+  border-radius: 10px;
+  width: 100px;
+  height: 40px;
+}
+.action-buttons:hover {
+  border: 1px solid black;
+  background-color: rgba(55, 65, 81);
+  color: white;
+}

@@ -30,9 +30,7 @@ export class CreateCourseComponent implements OnInit {
       name: new FormControl('', [Validators.required]),
     });
     this.addedCourse = false;
-    this.courseService.getStudentsOfCourse(1).subscribe((data) => {
-      console.log(data);
-    });
+    this.courseService.getStudentsOfCourse(1).subscribe((data) => {});
   }
 
   postCourse() {

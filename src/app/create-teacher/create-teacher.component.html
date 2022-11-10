@@ -32,9 +32,8 @@
       </form>
       <button
         type="submit"
-        mat-raised-button
         (click)="postTeacher()"
-        class="save-teacher-button"
+        class="action-buttons disabled:bg-slate-200 disabled:cursor-not-allowed disabled:border-2 disabled:border-black"
         [disabled]="!myForm.valid"
       >
         Save Teacher

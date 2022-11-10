@@ -5,6 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { CreateCourseService } from '../shared/services/create-course.service';
 import { CourseResponse } from '../shared/Model/courseResponse';
 import { ListStudentService } from '../shared/services/list-student.service';
+import { displayAlert } from '../shared/alert-function';
 
 @Component({
   selector: 'app-list-student',
@@ -56,7 +57,6 @@ export class ListStudentComponent implements OnInit {
       )
       .subscribe((value) => {
         this.dataSource.data = value.content;
-        console.log(value.content);
         setTimeout(() => {
           this.paginator.pageIndex = value.number;
           this.paginator.length = value.totalElements;
@@ -66,7 +66,6 @@ export class ListStudentComponent implements OnInit {
   }
 
   pageChanged(event: PageEvent) {
-    console.log({ event });
     this.pageSize = event.pageSize;
     this.currentPage = event.pageIndex;
     this.loadData();
@@ -94,6 +93,19 @@ export class ListStudentComponent implements OnInit {
   enrollStudent(studentId: number, courseIdIndex: number) {
     this.courseService
       .addStudentToCourse(this.courses[courseIdIndex].id, studentId)
-      .subscribe();
+      .subscribe({
+        error: (err: any) => {
+          console.log(err);
+          displayAlert('Error', 'Cannot enroll student', 2000, 'error');
+        },
+        complete: () => {
+          displayAlert(
+            'Success',
+            'Student successfully enrolled',
+            2000,
+            'success'
+          );
+        },
+      });
   }
 }

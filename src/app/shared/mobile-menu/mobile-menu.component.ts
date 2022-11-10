@@ -24,6 +24,7 @@ import { CreateTeacherComponent } from 'src/app/create-teacher/create-teacher.co
         style({
           height: '160px',
           opacity: 1,
+          transform: 'translateX(10%)',
         })
       ),
       state(
@@ -31,6 +32,7 @@ import { CreateTeacherComponent } from 'src/app/create-teacher/create-teacher.co
         style({
           height: '20px',
           opacity: 0,
+          transform: 'translateX(-10%)',
         })
       ),
       transition('open => closed', [animate('0.5s')]),
@@ -57,6 +59,13 @@ export class MobileMenuComponent implements OnInit {
   }
 
   navigation = [
+    {
+      link: () => {
+        this.router.navigate(['/']);
+      },
+      auth: true,
+      text: 'Home Page',
+    },
     {
       link: () => {
         this.openAddStudentModal();
@@ -88,6 +97,13 @@ export class MobileMenuComponent implements OnInit {
     {
       link: () => {
         this.router.navigate(['course/show']);
+      },
+      auth: true,
+      text: 'List Students In Courses',
+    },
+    {
+      link: () => {
+        this.router.navigate(['courses']);
       },
       auth: true,
       text: 'List Courses',

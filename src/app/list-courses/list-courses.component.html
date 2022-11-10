@@ -10,16 +10,16 @@
     <div class="wrapper">
       <button
         type="menu"
-        mat-button
+        mat-stroked-button
         [matMenuTriggerFor]="courseMenu"
         (click)="loadCourses()"
       >
         Filter by course
       </button>
-      <mat-menu #courseMenu="matMenu" xPosition="after">
+      <mat-menu #courseMenu="matMenu" xPosition="after" class="bg-gray-500">
         <button
-          class="course-button"
-          mat-button
+          class="course-button text-white bg-gray-700"
+          mat-raised-button
           *ngFor="let course of courses; let i = index"
           (click)="loadData(course.id)"
         >
@@ -44,7 +44,9 @@
         <ng-container matColumnDef="Actions">
           <th mat-header-cell *matHeaderCellDef>Actions</th>
           <td mat-cell *matCellDef="let element">
-            <button (click)="getGradesOfStudent(element.id)">Add Grade</button>
+            <button class="action-buttons" (click)="openModal(element.id)">
+              Add Grade
+            </button>
           </td>
         </ng-container>
 

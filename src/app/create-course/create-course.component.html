@@ -16,9 +16,8 @@
       </form>
       <button
         type="submit"
-        mat-raised-button
         (click)="postCourse()"
-        class="save-course-button"
+        class="action-buttons disabled:bg-slate-200 disabled:cursor-not-allowed text-center"
         [disabled]="!myForm.valid"
       >
         Save Course

@@ -3,19 +3,20 @@ import { RouterModule, Routes } from '@angular/router';
 import { CreateCourseComponent } from './create-course/create-course.component';
 import { CreateStudentComponent } from './create-student/create-student.component';
 import { CreateTeacherComponent } from './create-teacher/create-teacher.component';
+import { ListAllCoursesComponent } from './list-all-courses/list-all-courses.component';
 import { ListCoursesComponent } from './list-courses/list-courses.component';
 import { ListStudentComponent } from './list-student/list-student.component';
-
 
 import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
   {
-    path:"course/show" , component:ListCoursesComponent
+    path: 'course/show',
+    component: ListCoursesComponent,
   },
   {
     path: 'student/add',
-    component: CreateStudentComponent
+    component: CreateStudentComponent,
   },
   {
     path: 'course/add',
@@ -23,21 +24,24 @@ const routes: Routes = [
   },
   {
     path: 'teacher/add',
-    component: CreateTeacherComponent
+    component: CreateTeacherComponent,
   },
   {
     path: 'student/show',
-    component: ListStudentComponent
+    component: ListStudentComponent,
   },
   {
-    path:'' , component:WelcomeComponent
+    path: '',
+    component: WelcomeComponent,
   },
-
-  
+  {
+    path: 'courses',
+    component: ListAllCoursesComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

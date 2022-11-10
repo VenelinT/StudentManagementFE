@@ -21,20 +21,9 @@ mat-column {
 }
 
 .mat-column-Name,
-.mat-column-Age {
+.mat-column-Age,
+.mat-column-id {
   font-size: 14px;
   column-width: 500px;
   column-gap: 15px;
-}
-
-mat-paginator {
-  position: absolute !important;
-}
-
-.tableDisplay {
-  margin-top: 10%;
-}
-
-#mat-menu-panel-0 {
-  width: fit-content;
 }

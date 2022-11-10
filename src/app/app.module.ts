@@ -14,7 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatChipsModule } from '@angular/material/chips';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatMenu, MatMenuModule } from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
 
 import { MatTableModule } from '@angular/material/table';
@@ -29,6 +29,8 @@ import { ListCoursesComponent } from './list-courses/list-courses.component';
 import { SharedModule } from './shared/shared.module';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { AddGradeComponent } from './add-grade/add-grade.component';
+import { ListAllCoursesComponent } from './list-all-courses/list-all-courses.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +41,7 @@ import { AddGradeComponent } from './add-grade/add-grade.component';
     ListStudentComponent,
     ListCoursesComponent,
     AddGradeComponent,
+    ListAllCoursesComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +61,7 @@ import { AddGradeComponent } from './add-grade/add-grade.component';
     FormsModule,
     SharedModule,
     MatTooltipModule,
+    MatSlideToggleModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
