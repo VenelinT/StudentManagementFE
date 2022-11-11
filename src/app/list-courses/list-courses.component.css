@@ -44,3 +44,9 @@ mat-column {
     margin-top: 20% !important;
   }
 }
+@media (max-width: 600px) {
+  .scroll {
+    -webkit-overflow-scrolling: touch;
+    overflow: auto;
+  }
+}

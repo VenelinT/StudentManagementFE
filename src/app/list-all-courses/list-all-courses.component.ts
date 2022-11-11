@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { displayAlert } from '../shared/alert-function';
 import { CourseResponse } from '../shared/Model/courseResponse';
@@ -11,10 +12,11 @@ import { CreateTeacherService } from '../shared/services/create-teacher.service'
   templateUrl: './list-all-courses.component.html',
   styleUrls: ['./list-all-courses.component.css'],
 })
-export class ListAllCoursesComponent implements OnInit {
+export class ListAllCoursesComponent implements OnInit, AfterViewInit {
   isTableOnAll = false;
 
   courseList = new MatTableDataSource<CourseResponse[]>();
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
   teacherList!: Teacher[];
   descriptions: string[] = ['id', 'Name', 'Actions'];
   ngOnInit(): void {
@@ -25,6 +27,9 @@ export class ListAllCoursesComponent implements OnInit {
     private courseService: CreateCourseService,
     private teacherService: CreateTeacherService
   ) {}
+  ngAfterViewInit(): void {
+    this.courseList.paginator = this.paginator;
+  }
 
   loadAllCourses() {
     this.courseService.getCourses().subscribe({

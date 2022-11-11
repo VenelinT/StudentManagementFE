@@ -2,7 +2,7 @@ html,
 body {
   margin: 0;
   height: 100%;
-  overflow: hidden;
+  overflow: hidden !important;
 }
 .animate-charcter {
   text-transform: uppercase;
@@ -13,26 +13,13 @@ body {
     #a7a7a7 67%,
     #929292 100%
   );
-  background-size: auto auto;
-  background-clip: border-box;
-  background-size: 200% auto;
-  color: blue;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: text-animation 2s linear 1;
   display: inline-block;
   font-size: 100px;
   text-align: center;
   margin-top: 19%;
-}
-@keyframes text-animation {
-  0% {
-    color: #fff;
-  }
-  100% {
-    color: #000000;
-  }
 }
 
 @media (max-width: 640px) {
@@ -57,7 +44,7 @@ body {
 
 @keyframes animate-block {
   0% {
-    bottom: -50%;
+    bottom: 0%;
     transform: rotate(180deg);
   }
 

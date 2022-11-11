@@ -9,7 +9,7 @@
   <body class="w-content h-content">
     <div class="text-center pt-2 pb-2 mt-4">
       <div *ngIf="courseList" class="mt-3">
-        <div class="flex-col justify-center items-center">
+        <div class="flex-col justify-center items-center scroll">
           <table mat-table matSort [dataSource]="courseList" class="w-full">
             <ng-container matColumnDef="id">
               <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
@@ -71,22 +71,29 @@
         </div>
       </div>
     </div>
-    <div class="w-full">
-      <button
-        (click)="loadAllCourses()"
-        class="btn btn-primary action-buttons"
-        [ngClass]="isTableOnAll ? 'bg-gray-500' : ''"
-      >
-        All
-      </button>
+    <div class="lg:flex">
+      <div class="w-1/5">
+        <button
+          (click)="loadAllCourses()"
+          class="btn btn-primary action-buttons"
+          [ngClass]="isTableOnAll ? 'bg-gray-500' : ''"
+        >
+          All
+        </button>
 
-      <button
-        (click)="loadAllCoursesWithoutTeacher()"
-        class="btn btn-primary action-buttons"
-        [ngClass]="!isTableOnAll ? 'bg-gray-500' : ''"
-      >
-        No Teachers
-      </button>
+        <button
+          (click)="loadAllCoursesWithoutTeacher()"
+          class="btn btn-primary action-buttons"
+          [ngClass]="!isTableOnAll ? 'bg-gray-500' : ''"
+        >
+          No Teachers
+        </button>
+      </div>
+      <mat-paginator
+        [pageSizeOptions]="[5, 10, 20]"
+        showFirstLastButtons
+        class="bg-transparent w-1/2"
+      ></mat-paginator>
     </div>
   </body>
 </html>
